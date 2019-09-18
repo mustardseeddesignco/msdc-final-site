@@ -1,9 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Mustard Seed Design Company`,
+    description: `We are a full-stack design firm specializing in graphic design, logo deisgn, corporate branding, photography, web design, web development.`,
+    author: `@mustardseeddesignco`,
+    menuLinks: [
+      {
+        name: 'home',
+        link: '/'
+      },
+      {
+        name: 'projects',
+        link: '/projects'
+      },
+      {
+        name: 'about',
+        link: '/about'
+      },
+      {
+        name: 'contact',
+        link: '/contact'
+      },
+    ],
   },
+
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -12,6 +31,14 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    {
+      resolve: "@briodev/gatsby-theme-blog",
+      options: {
+        contentPath: "src/content/blog-posts",
+        basePath: "/blog",
+        tagsPath: "/categories"
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

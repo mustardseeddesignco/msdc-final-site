@@ -5,23 +5,23 @@ import styled from '@emotion/styled'
 
 const Header = () => {
 
-  return (
-    <Head>
+    return (
+        <Head>
 
-      <SiteName>
-        <h1>Hi There</h1>
-      </SiteName>
-      <NavMenu>
-        <MenuLinks>
-          <NavItem><StyledLink to="/">HOME</StyledLink></NavItem>
-          <NavItem><StyledLink to="/projects">PROJECTS</StyledLink></NavItem>
-          <NavItem><StyledLink to="/about">ABOUT</StyledLink></NavItem>
-          <NavItem><StyledLink to="/contact">CONTACT</StyledLink></NavItem>
-          <NavItem><StyledLink to="/blog">BLOG</StyledLink></NavItem>
-        </MenuLinks>
-      </NavMenu>
-    </Head>
-  )
+            <SiteName>
+                <h1>Hi There</h1>
+            </SiteName>
+            <NavMenu>
+                <MenuLinks>
+                    <NavItem><StyledLink to="/">HOME</StyledLink></NavItem>
+                    <NavItem><StyledLink to="/projects">PROJECTS</StyledLink></NavItem>
+                    <NavItem><StyledLink to="/about">ABOUT</StyledLink></NavItem>
+                    <NavItem><StyledLink to="/contact">CONTACT</StyledLink></NavItem>
+                    <NavItem><StyledLink to="/blog">BLOG</StyledLink></NavItem>
+                </MenuLinks>
+            </NavMenu>
+        </Head>
+    )
 }
 
 export default Header
