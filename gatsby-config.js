@@ -3,24 +3,7 @@ module.exports = {
     title: `Mustard Seed Design Company`,
     description: `We are a full-stack design firm specializing in graphic design, logo deisgn, corporate branding, photography, web design, web development.`,
     author: `@mustardseeddesignco`,
-    menuLinks: [
-      {
-        name: 'home',
-        link: '/'
-      },
-      {
-        name: 'projects',
-        link: '/projects'
-      },
-      {
-        name: 'about',
-        link: '/about'
-      },
-      {
-        name: 'contact',
-        link: '/contact'
-      },
-    ],
+
   },
 
   plugins: [
@@ -51,7 +34,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/msdc-logo.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
