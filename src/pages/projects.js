@@ -7,31 +7,31 @@ import SEO from "../components/seo"
 
 const ProjectsPage = ({ data }) => {
 
-    const image = data.allFile.edges
+  const image = data.allFile.edges
 
-    return (
+  return (
 
-        <Layout>
-            <SEO title="Projects" />
-            <Section1>
-                <h1>Projects</h1>
-            </Section1>
-            <ImageGrid>
-                <div>
-                    {image ? image.map((item, key) => (
-                        <>
-                            <div>
-                                <h3>{item.node.name}</h3>
-                                <img src={item.node.publicURL} alt="" />
-                            </div>
-                        </>
-                    )) : null}
-                </div>
-            </ImageGrid>
+    <Layout>
+      <SEO title="Projects" />
+      <Section1>
+        <h1>Projects</h1>
+      </Section1>
+      <ImageGrid>
 
-        </Layout>
+        {image ? image.map((item, key) => (
+          <>
+            <div>
+              <img src={item.node.publicURL} alt="" />
+              <ProjectTitle>{item.node.name}</ProjectTitle>
+            </div>
+          </>
+        )) : null}
 
-    )
+      </ImageGrid>
+
+    </Layout>
+
+  )
 }
 
 export default ProjectsPage
@@ -39,11 +39,14 @@ export default ProjectsPage
 export const query = graphql`
 
 query MyQuery {
-    allFile {
+    allFile(filter: {internal: {mediaType: {eq: "image/png"}}}) {
       edges {
         node {
           name
           publicURL
+          internal {
+            mediaType
+          }
         }
       }
     }
@@ -62,4 +65,7 @@ const ImageGrid = styled.div`
   grid-auto-rows: minmax(250px, auto);
   grid-gap: 1rem;
   justify-items: center;
+`
+const ProjectTitle = styled.h3`
+  text-align: center;
 `
