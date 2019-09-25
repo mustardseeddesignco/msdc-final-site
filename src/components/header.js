@@ -44,7 +44,8 @@ const Head = styled.div`
 
 `
 const SiteName = styled.h1`
-  color: #000000;
+  color: goldenrod;
+  padding: 3rem 0 3rem 0;
 `
 const NavMenu = styled.div`
   color: #000000;
