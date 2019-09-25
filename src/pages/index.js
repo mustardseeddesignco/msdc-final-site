@@ -29,13 +29,19 @@ export default IndexPage
 
 const Section1 = styled.div`
 width: 100%;
-height: 300px;
 text-align: center;
-padding: 2rem 0 0 0;
+padding: 2rem 0 2rem 0;
+color: green;
+background-color: lavender;
 `
 const Section2 = styled.div`
-
+padding: 2rem 0 2rem 0;
+color: orange;
+background-color: purple;
 `
 const Section3 = styled.div`
+padding: 2rem 0 2rem 0;
 text-align: right;
+color: blue;
+background-color: red;
 `
