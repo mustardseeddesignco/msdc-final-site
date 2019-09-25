@@ -1,15 +1,19 @@
 import React from 'react'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
+
 const ContactPage = () => {
+
+
     return (
         <Layout>
             <SEO title="Contact" />
             <Section1>
                 <h1>Contact</h1>
+
             </Section1>
         </Layout>
     )

@@ -1,6 +1,6 @@
 import React from 'react'
 import data from '../items.json'
-import styled from '@emotion/styled-base';
+// import styled from '@emotion/styled-base';
 
 export default () => {
     return (

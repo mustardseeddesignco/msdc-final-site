@@ -1,30 +1,39 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import styled from '@emotion/styled'
 
+export default () => (
+  <StaticQuery
+    query={graphql`
+    query SiteTitle {
+      site {
+        siteMetadata {
+          title
+        }
+    }
+  }
+ `}
+    render={data => (
+      <Head>
+        <SiteName>
+          {data.site.siteMetadata.title}
+        </SiteName>
+        <NavMenu>
+          <MenuLinks>
+            <NavItem><StyledLink to="/">HOME</StyledLink></NavItem>
+            <NavItem><StyledLink to="/projects">PROJECTS</StyledLink></NavItem>
+            <NavItem><StyledLink to="/about">ABOUT</StyledLink></NavItem>
+            <NavItem><StyledLink to="/contact">CONTACT</StyledLink></NavItem>
+            <NavItem><StyledLink to="/blog">BLOG</StyledLink></NavItem>
+          </MenuLinks>
+        </NavMenu>
+      </Head>
+    )}
+  />
+)
 
-const Header = () => {
 
-  return (
-    <Head>
 
-      <SiteName>
-        <h1>Hi There</h1>
-      </SiteName>
-      <NavMenu>
-        <MenuLinks>
-          <NavItem><StyledLink to="/">HOME</StyledLink></NavItem>
-          <NavItem><StyledLink to="/projects">PROJECTS</StyledLink></NavItem>
-          <NavItem><StyledLink to="/about">ABOUT</StyledLink></NavItem>
-          <NavItem><StyledLink to="/contact">CONTACT</StyledLink></NavItem>
-          <NavItem><StyledLink to="/blog">BLOG</StyledLink></NavItem>
-        </MenuLinks>
-      </NavMenu>
-    </Head>
-  )
-}
-
-export default Header
 
 const Head = styled.div`
   background-color: #ffffff;

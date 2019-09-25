@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import Layout from '../components/layout'
 import SEO from "../components/seo"
@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 const ProjectsPage = ({ data }) => {
 
   const image = data.allFile.edges
+  const logos = data.allFile.edges
 
   return (
 
@@ -16,18 +17,32 @@ const ProjectsPage = ({ data }) => {
       <Section1>
         <h1>Projects</h1>
       </Section1>
-      <ImageGrid>
+      <Gallery>
+        <ImageGrid>
 
-        {image ? image.map((item, key) => (
-          <>
-            <div>
-              <img src={item.node.publicURL} alt="" />
-              <ProjectTitle>{item.node.name}</ProjectTitle>
-            </div>
-          </>
-        )) : null}
+          {image ? image.map((item, key) => (
+            <>
+              <div>
+                <img src={item.node.publicURL} alt="" />
+                <ProjectTitle>{item.node.name}</ProjectTitle>
+              </div>
+            </>
+          )) : null}
 
-      </ImageGrid>
+        </ImageGrid>
+      </Gallery>
+      <Gallery>
+        <LogoGrid>
+          {logos ? logos.map((logos, key) => (
+            <>
+              <div>
+                <img src={logos.node.publicURL} alt="" />
+                <ProjectTitle>{logos.node.name}</ProjectTitle>
+              </div>
+            </>
+          )) : null}
+        </LogoGrid>
+      </Gallery>
 
     </Layout>
 
@@ -36,22 +51,34 @@ const ProjectsPage = ({ data }) => {
 
 export default ProjectsPage
 
-export const query = graphql`
+export const Imagequery = graphql`
 
-query MyQuery {
-    allFile(filter: {internal: {mediaType: {eq: "image/png"}}}) {
+query ImageQuery {
+    allFile(filter: {sourceInstanceName: {eq: "images"}}) {
       edges {
         node {
           name
           publicURL
-          internal {
-            mediaType
-          }
+          
+        }
+      }
+    }
+  }
+`
+export const Logoquery = graphql`
+  query LogoQuery {
+    allFile(filter: {sourceInstanceName: {eq: "logos"}}) {
+      edges {
+        node {
+          publicURL
+          name
         }
       }
     }
   }
   `
+
+
 
 const Section1 = styled.div`
 width: 100%;
@@ -61,11 +88,24 @@ padding: 2rem 0 0 0;
 `
 const ImageGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
   grid-auto-rows: minmax(250px, auto);
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   justify-items: center;
+  padding: 1rem 1rem 1rem 1rem;
+`
+const LogoGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
+  grid-auto-rows: minmax(250px, auto);
+  grid-gap: 2rem;
+  justify-items: center;
+  padding: 1rem 1rem 1rem 1rem;
 `
 const ProjectTitle = styled.h3`
   text-align: center;
+`
+const Gallery = styled.div`
+  display: flex;
+  justify-content: center;
 `
