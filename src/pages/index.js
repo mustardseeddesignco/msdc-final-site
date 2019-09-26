@@ -31,17 +31,17 @@ const Section1 = styled.div`
 width: 100%;
 text-align: center;
 padding: 2rem 0 2rem 0;
-color: green;
-background-color: lavender;
+color: white;
+background-color: #f29191;
 `
 const Section2 = styled.div`
 padding: 2rem 0 2rem 0;
-color: orange;
-background-color: purple;
+color: white;
+background-color: #f2e1ac;
 `
 const Section3 = styled.div`
 padding: 2rem 0 2rem 0;
 text-align: right;
-color: blue;
-background-color: red;
+color: white;
+background-color: #735851;
 `

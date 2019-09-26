@@ -17,35 +17,39 @@ const ProjectsPage = ({ data }) => {
       <Section1>
         <h1>Projects</h1>
       </Section1>
-      <SectionTitleTop>
-        <h2>Graphic Designs</h2>
-      </SectionTitleTop>
+
+      <SectionTitleArea>
+        GRAPHIC DESIGNS
+      </SectionTitleArea>
+
       <Gallery>
-        <ImageGrid>
-          {image ? image.map((item, key) => (
-            <>
-              <div>
-                <img src={item.node.publicURL} alt="" />
-                <ProjectTitle>{item.node.name}</ProjectTitle>
-              </div>
-            </>
-          )) : null}
-        </ImageGrid>
+
+        {image ? image.map((item, key) => (
+          <>
+            <div>
+              <img src={item.node.publicURL} alt="" />
+              <ProjectTitle>{item.node.name}</ProjectTitle>
+            </div>
+          </>
+        )) : null}
+
       </Gallery>
-      <SectionTitle>
-        <h2>Logo Designs</h2>
-      </SectionTitle>
+
+
+      <SectionTitleArea2>LOGO DESIGNS</SectionTitleArea2>
+
+
       <Gallery>
-        <LogoGrid>
-          {logos ? logos.map((logos, key) => (
-            <>
-              <div>
-                <img src={logos.node.publicURL} alt="" />
-                <ProjectTitle>{logos.node.name}</ProjectTitle>
-              </div>
-            </>
-          )) : null}
-        </LogoGrid>
+
+        {logos ? logos.map((logos, key) => (
+          <>
+            <div>
+              <img src={logos.node.publicURL} alt="" />
+              <ProjectTitle>{logos.node.name}</ProjectTitle>
+            </div>
+          </>
+        )) : null}
+
       </Gallery>
     </Layout>
 
@@ -81,48 +85,49 @@ LogoQuery:
 
 const Section1 = styled.div`
 width: 100%;
-height: 300px;
+height: 150px;
 text-align: center;
 padding: 2rem 0 0 0;
 `
-const SectionTitleTop = styled.div`
-text-align: center;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 1.5rem 0 1.5rem 0;
-background-color: #43f5cc;
-color: #ffffff;
+const SectionTitleArea = styled.div`
+padding: 3rem 0 3rem 5rem;
+color: white;
+background-color: #f29191;
+font-size: 250%;
 `
-const SectionTitle = styled.div`
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem 0 1.5rem 0;
-  background-color: goldenrod;
-  color: #ffffff;
+const SectionTitleArea2 = styled.div`
+padding: 3rem 0 3rem 5rem;
+color: white;
+background-color: #f2e1ac;
+font-size: 250%;
 `
-const ImageGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
-  grid-auto-rows: minmax(250px, auto);
-  grid-gap: 2rem;
-  justify-items: center;
-  padding: 1rem 1rem 1rem 1rem;
+const SectionTitle = styled.h2`
+  font-size: 250%;
 `
-const LogoGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
-  grid-auto-rows: minmax(250px, auto);
-  grid-gap: 2rem;
-  justify-items: center;
-  padding: 1rem 1rem 1rem 1rem;
-`
+// const ImageGrid = styled.div`
+//   // display: grid;
+//   // grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
+//   // grid-auto-rows: minmax(250px, auto);
+//   // grid-gap: 2rem;
+//   // justify-items: center;
+//   // padding: 1rem 1rem 1rem 1rem;
+// `
+// const LogoGrid = styled.div`
+//   // display: grid;
+//   // grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
+//   // grid-auto-rows: minmax(250px, auto);
+//   // grid-gap: 2rem;
+//   // justify-items: center;
+//   // padding: 1rem 1rem 1rem 1rem;
+// `
 const ProjectTitle = styled.h3`
   text-align: center;
 `
 const Gallery = styled.div`
-  display: flex;
-  justify-content: center;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 30fr));
+grid-auto-rows: minmax(300px, auto);
+grid-gap: 2rem;
+justify-items: center;
+padding: 2rem 1rem 1rem 1rem;
 `
