@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 import styled from '@emotion/styled'
+import Logo from '../logos/msdc-logo.png'
 
 export default () => (
   <StaticQuery
@@ -16,7 +17,8 @@ export default () => (
     render={data => (
       <Head>
         <SiteName>
-          {data.site.siteMetadata.title}
+          {/* {data.site.siteMetadata.title} */}
+          <img src={Logo} alt="" width="300" />
         </SiteName>
         <NavMenu>
           <MenuLinks>
@@ -45,7 +47,9 @@ const Head = styled.div`
 `
 const SiteName = styled.h1`
   color: goldenrod;
-  padding: 3rem 0 3rem 0;
+  padding: 0 0 0 0;
+  margin: -20px 0 -40px 0;
+
 `
 const NavMenu = styled.div`
   color: #000000;
